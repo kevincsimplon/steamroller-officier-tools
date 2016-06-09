@@ -1,0 +1,578 @@
+
+    		html, body {
+    			margin: 0px;
+    			padding: 0px;
+    			height: 100%;
+    			width: 100%;
+    		}
+
+    		html {
+    			background: #0a0a0a;
+    		}
+
+    		body {
+    			color: white;
+    			font-family: Helvetica, Arial, sans-serif;
+    		}
+
+    		a, a:visited {
+    			color: #ccc;
+    		}
+
+    		a:hover, a:focus {
+    			color: #fff;
+    		}
+
+    		h3 {
+    			font-size: 42px;
+    			font-weight: bold;
+    		}
+
+    		/* Clearfix */
+    		.clearfix:after {
+    			content: "";
+    			display: table;
+    			clear: both;
+    		}
+
+    		#Wrapper {
+    			background: url('bg_tile.png') repeat;
+    			min-height: 100%;
+    			margin: 0 auto -130px;
+    			width: 100%;
+    			box-sizing: border-box;
+    			text-align: center;
+    			position: relative;
+    			overflow: hidden;
+    		}
+
+    		#Container {
+    			width: 100%;
+    			margin: 0px auto;
+    			padding: 0px 4%;
+    			box-sizing: border-box;
+    		}
+
+    		#Footer, .push {
+    			position: relative;
+    			width: 100%;
+    			height: 130px;
+    			text-align: center;
+    			color: white;
+    			font-size: 14px
+    			font-weight: bold;
+    			box-sizing: border-box;
+    			padding: 20px 20px 0px;
+    			z-index: 10;
+    		}
+
+    		#Header {
+    			padding: 20px 0px;
+    			text-align: center;
+    			margin-bottom: -20px;
+    		}
+
+    		#Slot_Controls {
+    			width: 100%;
+    			text-align: center;
+    			display: block;
+    			font-size: 0px;
+    			margin-bottom: 10px;
+    		}
+
+    		.slot_button {
+    			margin: 0px 10px 8px;
+    			font-size: 34px;
+    			padding: 4px 5%;
+    			font-weight: bold;
+    			cursor: pointer;
+    		}
+
+    		#Edit {
+    			display: none;
+    			width: 100%;
+    			height: 100%;
+    			position: absolute;
+    			z-index: 9990;
+    			top: 0px;
+    			left: 0;
+    			right: 0;
+    			margin: 0 auto;
+    		}
+
+    		#Blackout {
+    			position: fixed;
+    			width: 100%;
+    			height: 100%;
+    			background: rgba(0,0,0, .85);
+    		}
+
+    		.edit_modal {
+    			position: absolute;
+    			width: 70%;
+    			top: 10%;
+    			left: 0;
+    			right: 0;
+    			margin: auto;
+    			display: block;
+    			padding: 20px;
+    			border-radius: 10px;
+    		}
+
+    		/* Styles */
+
+    		.slot {
+    			display: inline-block;
+    			font-size: 0px;
+    			margin: 10px;
+    			padding: 0px;
+    			position: relative;
+    			overflow: hidden;
+    			background-image: url('wide_red.png');
+    			transition: .2s background-image linear;
+    			-webkit-transition: .2s background-image linear;
+    			-moz-transition: .2s background-image linear;
+    			cursor: pointer;
+    			background-repeat: no-repeat;
+    			background-size: contain;
+    			box-sizing: border-box;
+    			border-right: 1px solid #393939;
+    		}
+
+    			.slot.active {
+    				border-right: 1px solid #fff;
+    			}
+
+    			.slot:hover {
+    				border-right: 1px solid #777;
+    			}
+
+    			.slot:hover .char:after {
+    				border: 4px solid #777;
+    			}
+
+    			.slot.active .char:after {
+    				box-shadow: inset 0px 0px 8px white;
+    				-webkit-box-shadow: inset 0px 0px 8px white;
+    				-moz-box-shadow: inset 0px 0px 8px white;
+    				border: 4px solid white;
+    			}
+
+    			/* Slot Colours */
+    			.red { background-image: url('wide_red.png'); }
+    			.blue { background-image: url('wide_blue.png'); }
+    			.yellow { background-image: url('wide_yellow.png'); }
+    			.green { background-image: url('wide_green.png'); }
+    			.orange { background-image: url('wide_orange.png'); }
+    			.teal { background-image: url('wide_teal.png'); }
+    			.pink { background-image: url('wide_pink.png'); }
+    			.grey { background-image: url('wide_grey.png'); }
+    			.purple { background-image: url('wide_purple.png'); }
+
+
+    			/* Slot Sizes */
+    			.wide,
+    			.wide .char,
+    			.wide .char:after {
+    				width: 344px;
+    				height: 344px;
+    			}
+
+    			.wide .char { background-position: center -40px; }
+    			.wide .char:after { background-size: 344px 344px; }
+
+    			.small,
+    			.small .char,
+    			.small .char:after {
+    				width: 200px;
+    				height: 200px;
+    				background-size: 220px 220px;
+    			}
+
+    			.small .char { background-position: center -22px; }
+    			.small .char:after { background-size: 200px 200px; }
+
+    			.thin,
+    			.thin .char,
+    			.thin .char:after {
+    				width: 200px;
+    				height: 344px;
+    				background-size: 344px 344px;
+    			}
+
+    			.slim,
+    			.slim .char,
+    			.slim .char:after {
+    				width: 130px;
+    				height: 200px;
+    				background-size: 210px 210px;
+    			}
+
+    			.mini,
+    			.mini .char,
+    			.mini .char:after {
+    				width: 120px;
+    				height: 120px;
+    				background-size: 130px 130px;
+    			}
+
+    			.mini .char { background-position: center -10px; }
+    			.mini .char:after { background-size: 120px 120px; }
+
+
+    		.char {
+    			width: 344px;
+    			height: 344px;
+    			display: block;
+    			background-position: center bottom;
+    			background-repeat: no-repeat;
+    			pointer-events: none;
+    			box-sizing: border-box;
+    			transition: .2s background-image linear;
+    			-webkit-transition: .2s background-image linear;
+    			-moz-transition: background-image .2s linear;
+    		}
+
+    			.char:after {
+    				position: absolute;
+    				display: block;
+    				box-sizing: border-box;
+    				content: "";
+    				border: 4px solid #393939;
+    				box-shadow: inset 0px 0px 6px black;
+    				-webkit-box-shadow: inset 0px 0px 6px black;
+    				-moz-box-shadow: inset 0px 0px 6px black;
+    				transition: .2s background-image linear;
+    				-webkit-transition: .2s background-image linear;
+    				-moz-transition: .2s background-image linear;
+    			}
+
+    		#IconList {
+    			text-align: center;
+    			margin-left: 354px;
+    		}
+
+    		.icon {
+    			background-color: #232E40;
+    			border-radius: 4px;
+    			-webkit-border-radius: 4px;
+    			-moz-border-radius: 4px;
+    			width: 90px;
+    			height: 60px;
+    			display: inline-block;
+    			box-sizing: border-box;
+    			background-repeat: no-repeat;
+    			background-size: cover;
+    			cursor: pointer;
+    			box-shadow: inset 0px 0px 0px white;
+    			-webkit-box-shadow: inset 0px 0px 0px white;
+    			-moz-box-shadow: inset 0px 0px 0px white;
+    			transition: box-shadow .1s linear;
+    			-webkit-transition: box-shadow .1s linear;
+    			-moz-transition: box-shadow .1s linear;
+    			margin: 1px;
+
+    		}
+
+    			.icon:hover, .costume:hover {
+    				border: 2px solid rgba(255, 255, 255, .2);
+    			}
+
+    		.editChar,
+    		.editCost {
+    			position: fixed;
+    			left: -9999px;
+    			font-size: 0px;
+    			display: block;
+    		}
+
+    			.editChar:checked + .icon,
+    			.editCost:checked + .costume {
+    				box-shadow: inset 0px 0px 30px white;
+    				-webkit-box-shadow: inset 0px 0px 30px white;
+    				-moz-box-shadow: inset 0px 0px 30px white;
+    				transition: box-shadow .3s linear;
+    				-webkit-transition: box-shadow .3s linear;
+    				-moz-transition: box-shadow .3s linear;
+    			}
+
+    		.selectBox, .selectLabel, .changeButton {
+    			position: relative;
+    			display: inline-block;
+    			width: 49%;
+    			margin: 10px 0px 0px;
+    			box-sizing: border-box;
+    			font-size: 14px;
+    			color: white;
+    		}
+
+    			.selectLabel {
+    				font-weight: bold;
+    				font-style: italic;
+    				font-size: 18px;
+    			}
+
+    			.changeButton {
+    				padding: 7px 0px;
+    				color: black;
+    			}
+
+    		.selectBox {
+    			padding: 4px 35px 4px 4px;
+    			background: rgba(0, 0, 0, .9) url('arrow.png?2') no-repeat center right;
+    			-webkit-appearance: none;
+    			-moz-appearance: none;
+    			appearance: none;
+    		}
+
+    			.leftSel {
+    				margin-right: 2%;
+    			}
+
+    			@media screen and (min-width:0\0) {
+    				.selectBox {
+    					background:none;
+    					padding: 4px;
+    				}
+    			}
+
+    		.left_col {
+    			height: 100%;
+    			float: left;
+    			font-size: 0px;
+    			width: 344px;
+    		}
+
+    		#CostumeList {
+    			margin: 20px 0px;
+    			text-align: center;
+    			font-size: 0px;
+    		}
+
+    			.costume {
+    				background-color: #232E40;
+    				width: 11.5%;
+    				margin: 0px .5% 1%;
+    				height: 150px;
+    				display: inline-block;
+    				background-size: 230px 230px;
+    				background-position: center -50px;
+    				background-repeat: no-repeat;
+    				box-sizing: border-box;
+    				border: 2px solid transparent;
+    				border-radius: 4px;
+    				-webkit-border-radius: 4px;
+    				-moz-border-radius: 4px;
+    				cursor: pointer;
+    			}
+
+    		#EditButtons {
+    			text-align: center;
+    		}
+
+    		#CloseButton,
+    		#CornerButton,
+    		#CloseScreenshot {
+    			position: absolute;
+    			top: 10px;
+    			right: 20px;
+    			font-weight: bold;
+    			font-size: 40px;
+    			height: 60px;
+    			width: 60px;
+    			background-color: rgba(255, 255, 255, .25);
+    			text-align: center;
+    			line-height: 60px;
+    			cursor: pointer;
+    			z-index: 10;
+    			border-radius: 60px;
+    			-webkit-border-radius: 60px;
+    			-moz-border-radius: 60px;
+    		}
+
+    			#CloseButton:hover,
+    			#CornerButton:hover,
+    			#CloseScreenshot:hover {
+    				background-color: rgba(255, 255, 255, .25);
+    				text-shadow: 1px 1px 2px white;
+    			}
+
+    		#PreviewBox {
+    			text-align: center;
+    		}
+
+    		#Preview {
+    			margin: 0px;
+    			display: inline-block;
+    		}
+
+    		#Screenshot {
+    			height: 100%;
+    			width: 100%;
+    			position: fixed;
+    			top: 0;
+    			left: 0;
+    			right: 0;
+    			background: rgba(0, 0, 0, .8);
+    			z-index: 9999;
+    			display: none;
+    			opacity: 0;
+    		}
+
+    		#ScreenshotNote {
+    			position: fixed;
+    			bottom: 0px;
+    			right: 0px;
+    			color: white;
+    			font-size: 14px;
+    			text-align: right;
+    			padding: 4px 8px;
+    		}
+
+    		/* Media Queries */
+    		@media(max-width: 1600px) {
+    			#Wrapper {
+    				padding: 0px 2.5%;
+    				margin: 0 auto -140px;
+    			}
+
+    			#Footer, .push {
+    				height: 140px;
+    			}
+
+    			.edit_modal {
+    				top: 3%;
+    				width: 90%;
+    			}
+
+    			.icon {
+    				width: 75px;
+    				height: 50px;
+    				margin: 2px;
+    			}
+    		}
+
+    		@media(max-width: 850px) {
+    			#Header img {
+    				width: 100%;
+    			}
+    		}
+
+    		@media(max-width: 800px) {
+    			#Wrapper {
+    				padding: 0px;
+    				margin: 0 auto -160px;
+    			}
+
+    			#Footer, .push {
+    				height: 160px;
+    			}
+
+    			.slot {
+    				margin: 2px;
+    			}
+
+    			.edit_modal {
+    				text-align: center;
+    				padding-bottom: 70px;
+    			}
+
+    			#EditButtons {
+    				position: fixed;
+    				width: 100%;
+    				left: 0px;
+    				bottom: 0px;
+    				padding: 20px 0px;
+    				background: rgba(0, 0, 0, .75);
+    			}
+
+    			.left_col {
+    				height: auto;
+    				float: none;
+    				width: auto;
+    				display: inline-block;
+    			}
+
+    			#IconList {
+    				margin-left: 0px;
+    				margin-top: 20px;
+    			}
+
+    			.slot_button {
+    				font-size: 28px;
+    				width: 45%;
+    				box-sizing: border-box;
+    				padding: 6px 0px;
+
+    			}
+
+    			.costume {
+    				width: 23%;
+    			}
+
+    			#CloseButton {
+    				font-size: 24px;
+    				height: 40px;
+    				width: 40px;
+    				line-height: 40px;
+    			}
+    		}
+
+    
+    		.slot.thin .char:after { background-image: none; }
+    		.slot.slim .char:after { background-image: none; }
+
+    		/* Sorting stuff */
+    		.sort-highlight {
+    			display: inline-block;
+    			width: 344px;
+    			height: 344px;
+    			background: rgba(255, 255, 255, .4);
+    			margin: 10px;
+    		}
+    			/* Placeholder Sizes */
+    			.placeholder_wide .sort-highlight {
+    				width: 344px;
+    				height: 344px;
+    			}
+
+    			.placeholder_small .sort-highlight {
+    				width: 200px;
+    				height: 200px;
+    			}
+
+    			.placeholder_thin .sort-highlight {
+    				width: 200px;
+    				height: 344px;
+    			}
+
+    			.placeholder_slim .sort-highlight {
+    				width: 130px;
+    				height: 200px;
+    			}
+
+    			.placeholder_mini .sort-highlight {
+    				width: 120px;
+    				height: 120px;
+    			}
+
+    		.sorting-handle {
+    			opacity: 0;
+    			background: url('drag-icon.png');
+    		    position: absolute;
+    			top: 10px;
+    			right: 10px;
+    			display: block;
+    			background-size: 30px 30px;
+    			width: 30px;
+    			height: 30px;
+    			cursor: move;
+    		}
+
+    			.slot:hover .sorting-handle { opacity: 1; }
+
+.compo-font{
+  font-weight: bold;
+  font-size: 35px;
+  font-family: Fantasy;
+}

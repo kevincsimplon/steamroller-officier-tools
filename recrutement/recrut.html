@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steamroller-tools</title>
+  <script src="script.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="jquery.js"></script>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/recrut.css">
+    <script type="text/javascript" src="jquery.visible.min.js"></script>
+    <script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
+
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-54938105-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+</head>
+<body>
+
+
+<!-- Nav-->
+<div id="navbar">
+    <a href="../index.html">Personnages</a>
+    <a href="#">Gold</a>
+    <a href="#">Recrutement</a>
+    <a href="#">Legion</a>
+
+</div>
+
+
+
+
+<div class="container">
+
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Legion
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li class="dropdown-header">The Emerald Nightmare</li>
+      <li><a href="#">Nythendra</a></li>
+      <li><a href="#">Ursoc</a></li>
+      <li><a href="#">Dragons og nightmare</a></li>
+      <li><a href="#">Elerethe Renferal</a></li>
+      <li><a href="#">Cenarius</a></li>
+      <li><a href="#">Il'gynoth, Heart of Corruption </a></li>
+      <li><a href="#">Xavius</a></li>
+
+      <li class="divider"></li>
+      <li class="dropdown-header">Suramar Palace </li>
+      <li><a href="#">Crystal Scorpion</a></li>
+    </ul>
+  </div>
+</div> <!-- /NAV-->
+
+
+
+
+
+
+
+
+
+
+<!---->
+<div id="Edit">
+	<div id="Blackout"></div>
+	<div class="edit_modal">
+
+		<div class="left_col">
+
+			<div id="PreviewBox">
+				<div id="Preview" class="slot wide red">
+					<div class="char koopa color01"></div>
+				</div>
+			</div>
+
+			<label for="box_size" class="selectLabel leftSel">Size</label>
+			<label for="box_color" class="selectLabel">Background</label>
+
+
+
+			<input id="changeSizes" type="button" class="changeButton leftSel" value="Change All Slot Sizes" />
+
+			<input id="changeColors" type="button" class="changeButton" value="Change All Slot Colors" />
+
+		</div>
+
+		<div id="IconList" class="clearfix">
+			<input type='radio' name='charSel' class='editChar' id='sel_bayonetta' value='bayonetta'></input><label class='icon bayonetta' for='sel_bayonetta' value='Bayonetta'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_koopa' value='koopa'></input><label class='icon koopa' for='sel_koopa' value='Bowser'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_koopajr' value='koopajr'></input><label class='icon koopajr' for='sel_koopajr' value='Bowser Jr.'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_cloud' value='cloud'></input><label class='icon cloud' for='sel_cloud' value='Cloud'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_kamui' value='kamui'></input><label class='icon kamui' for='sel_kamui' value='Corrin'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_pitb' value='pitb'></input><label class='icon pitb' for='sel_pitb' value='Dark Pit'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_dedede' value='dedede'></input><label class='icon dedede' for='sel_dedede' value='Dedede'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_diddy' value='diddy'></input><label class='icon diddy' for='sel_diddy' value='Diddy Kong'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_donkey' value='donkey'></input><label class='icon donkey' for='sel_donkey' value='Donkey Kong'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_drmario' value='drmario'></input><label class='icon drmario' for='sel_drmario' value='Dr. Mario'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_duckhunt' value='duckhunt'></input><label class='icon duckhunt' for='sel_duckhunt' value='Duck Hunt'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_falco' value='falco'></input><label class='icon falco' for='sel_falco' value='Falco'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_fox' value='fox'></input><label class='icon fox' for='sel_fox' value='Fox'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_ganon' value='ganon'></input><label class='icon ganon' for='sel_ganon' value='Ganondorf'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_captain' value='captain'></input><label class='icon captain' for='sel_captain' value='Captain Falcon'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_gekkouga' value='gekkouga'></input><label class='icon gekkouga' for='sel_gekkouga' value='Greninja'></label>
+      <input type='radio' name='charSel' class='editChar' id='sel_ike' value='ike'></input><label class='icon ike' for='sel_ike' value='Ike'></label><input type='radio' name='charSel' class='editChar' id='sel_purin' value='purin'>
+    </input><label class='icon purin' for='sel_purin' value='Jigglypuff'></label><input type='radio' name='charSel' class='editChar' id='sel_kirby' value='kirby'>
+  </input><label class='icon kirby' for='sel_kirby' value='Kirby'></label><input type='radio' name='charSel' class='editChar' id='sel_link' value='link'></input><label class='icon link' for='sel_link' value='Link'></label>
+  <input type='radio' name='charSel' class='editChar' id='sel_littlemac' value='littlemac'></input><label class='icon littlemac' for='sel_littlemac' value='Little Mac'></label>
+  <input type='radio' name='charSel' class='editChar' id='sel_lizardon' value='lizardon'></input><label class='icon lizardon' for='sel_lizardon' value='Lizardon'></label>
+  <input type='radio' name='charSel' class='editChar' id='sel_lucario' value='lucario'></input><label class='icon lucario' for='sel_lucario' value='Lucario'></label>
+  <input type='radio' name='charSel' class='editChar' id='sel_lucas' value='lucas'></input><label class='icon lucas' for='sel_lucas' value='Lucas'></label>
+  <input type='radio' name='charSel' class='editChar' id='sel_lucina' value='lucina'></input><label class='icon lucina' for='sel_lucina' value='Lucina'></label>
+  <input type='radio' name='charSel' class='editChar' id='sel_luigi' value='luigi'></input><label class='icon luigi' for='sel_luigi' value='Luigi'></label><input type='radio' name='charSel' class='editChar' id='sel_mario' value='mario'>
+</input><label class='icon mario' for='sel_mario' value='Mario'></label><input type='radio' name='charSel' class='editChar' id='sel_marth' value='marth'></input><label class='icon marth' for='sel_marth' value='Marth'></label>
+<input type='radio' name='charSel' class='editChar' id='sel_rockman' value='rockman'></input><label class='icon rockman' for='sel_rockman' value='Mega Man'></label>
+<input type='radio' name='charSel' class='editChar' id='sel_metaknight' value='metaknight'></input><label class='icon metaknight' for='sel_metaknight' value='Metaknight'></label>
+<input type='radio' name='charSel' class='editChar' id='sel_mewtwo' value='mewtwo'></input><label class='icon mewtwo' for='sel_mewtwo' value='Mewtwo'></label>
+<input type='radio' name='charSel' class='editChar' id='sel_miifighter' value='miifighter'></input><label class='icon miifighter' for='sel_miifighter' value='Mii Brawler'></label>
+<input type='radio' name='charSel' class='editChar' id='sel_miigunner' value='miigunner'></input><label class='icon miigunner' for='sel_miigunner' value='Mii Gunner'></label>
+<input type='radio' name='charSel' class='editChar' id='sel_miiswords' value='miiswords'></input><label class='icon miiswords' for='sel_miiswords' value='Mii Swordfighter'></label>
+<input type='radio' name='charSel' class='editChar' id='sel_omakase' value='omakase'></input><label class='icon omakase' for='sel_omakase' value='Random'></label>
+</div>
+
+		<div id="CostumeList">
+
+		</div>
+
+		<div id="EditButtons">
+			<input id="editSave" class="slot_button" type="button" value="Save Changes" />
+		</div>
+
+
+
+	</div>
+
+	<div id="CloseButton">X</div>
+</div>
+
+
+
+	<div id="Wrapper">
+
+		<div id="Header">
+		<h1 class="compo-font">Crée ta compos </h1>
+		</div>
+
+		<div id="Slot_Controls">
+			<input type="button" value="Add Slot" class="slot_button" onclick="addSlot()" />
+			<input type="button" value="Delete Slot" class="slot_button" onclick="removeSlot()" />
+		</div>
+
+		<div id="Container">
+
+		</div>
+
+		<div class="push"></div>
+
+	</div>
+
+
+
+<script>
+
+	// Initialize
+	var slots = 0;
+	var startSlots = 4;
+	var slotData = new Array();
+	var preview = new Array();
+
+	// Sorting Stuff
+	var sorting = false;
+	var oldSlotData = new Array();
+	var placeholderClass = "placeholder_wide";
+
+	var editSlot = 1;
+
+	var minSlots = 2;
+	var maxSlots = 20;
+
+	var i = 1;
+	while(i <= maxSlots) {
+		slotData[i] = new Array();
+		i++;
+	}
+
+	preview['size'] = "wide";
+	preview['color'] = "red";
+	preview['character'] = "omakase";
+	preview['costume'] = "01";
+
+	/* Start up */
+	$( document ).ready(function() {
+		initialize();
+
+		// Bind Edit Functions
+			// Update Preview Character
+			$('.editChar').change(function() {
+
+				//alert($(this).attr("value"));
+
+				updatePreview(preview['size'], preview['color'], $(this).attr("value"), "01");
+				updateCostumes();
+
+				if(!$('#CostumeList').visible(true)) {
+
+					$('html, body').animate({
+						scrollTop: $("#CostumeList").offset().top - 80
+					}, 300);
+
+				}
+			});
+
+			// Update Preview Size
+			$('#box_size').change(function() {
+
+				//alert($(this).find(":selected").attr('value'));
+				updatePreview($(this).find(":selected").attr('value'), preview['color'], preview['character'], preview['costume']);
+			});
+
+			// Update Preview Color
+			$('#box_color').change(function() {
+
+				//alert($(this).find(":selected").attr('value'));
+				updatePreview(preview['size'], $(this).find(":selected").attr('value'), preview['character'], preview['costume']);
+			});
+
+
+		// Bind Save Function
+		$('#editSave').click(function(event) {
+			saveSlot();
+		});
+
+		// Bind Close Functions
+		$('#Blackout').click(function(event) {
+			event.stopPropagation();
+			if($(event.target).attr('id') == "Blackout") {
+				$('#Edit').fadeOut(250);
+			}
+		});
+		$('#CloseButton').click(function(event) {
+			event.stopPropagation();
+			$('#Edit').fadeOut(250);
+		});
+		$('#editDiscard').click(function(event) {
+			event.stopPropagation();
+			$('#Edit').fadeOut(250);
+		});
+
+	});
+
+	/* Dynamic Content */
+	function refreshListeners() {
+		$( ".slot" ).off("click", selectSlot());
+		$( ".slot" ).on("click", function(event) {
+			event.stopPropagation();
+			if( sorting == false ) {
+				selectSlot($(this));
+			}
+		});
+
+
+		$( "#Container" ).sortable({
+			placeholder: 'sort-highlight',
+			handle: '.sorting-handle',
+			cursor: 'move',
+			revert: 40,
+			scroll: false,
+			start: function(event, ui) {
+				sorting = true;
+				placeholderClass = "placeholder_" + ui.item[0]['classList'][1];
+
+				$('#Container').addClass(placeholderClass);
+
+				// Store old slot data
+				$.extend( true, oldSlotData, slotData );
+			},
+			update: function(event, ui) {
+
+				// Update all the IDs
+				$.each($('#Container .slot'), function(i, v) {
+					var oldSlotID = this.id;
+					oldSlotID = oldSlotID.substr(5);
+
+					i += 1;
+
+					if ( oldSlotID != i ) {
+
+						slotData[i]['size'] = oldSlotData[oldSlotID]['size'];
+						slotData[i]['color'] = oldSlotData[oldSlotID]['color'];
+						slotData[i]['character'] = oldSlotData[oldSlotID]['character'];
+						slotData[i]['costume'] = oldSlotData[oldSlotID]['costume'];
+
+					}
+
+					this.id = "slot_" + i;
+				});
+			},
+			stop: function(event, ui) {
+				sorting = false;
+				$('#Container').removeClass(placeholderClass);
+			}
+		});
+		$('#Container').sortable('refresh');
+
+
+		$( ".editCost" ).off("click", selectSlot());
+		$( ".editCost" ).on("click", function(event) {
+			event.stopPropagation();
+			//alert($(this).attr("value"));
+			updatePreview(preview['size'], preview['color'], preview['character'], $(this).attr("value"));
+		});
+	}
+
+
+	/* Functions */
+
+	function initialize() {
+		while(slots < startSlots) {
+			addSlot('small', 'red', 'omakase', '01');
+		}
+
+		//console.log("Initialized with " + startSlots + " slots.");
+		//console.log(slotData[slots]['size'] + slotData[slots]['color'] + slotData[slots]['character'] + slotData[slots]['costume']);
+	}
+
+	function addSlot(size, color, character, costume) {
+		if(slots < maxSlots) {
+			slots += 1;
+
+			size = typeof size !== 'undefined' ? size : 'small';
+			color = typeof color !== 'undefined' ? color : 'red';
+			character = typeof character !== 'undefined' ? character : 'omakase';
+			costume = typeof costume !== 'undefined' ? costume : '01';
+
+			slotData[slots]['size'] = size;
+			slotData[slots]['color'] = color;
+			slotData[slots]['character'] = character;
+			slotData[slots]['costume'] = costume;
+
+			var newSlot = "<div id='slot_" + slots + "' class='slot " + slotData[slots]['size'] + " " + slotData[slots]['color'] + "'><div class='sorting-handle'></div><div class='char " + slotData[slots]['character'] + " color" + slotData[slots]['costume'] + "'></div></div>";
+			$('#Container').append(newSlot);
+
+			//console.log("Added slot #" + slots);
+
+			refreshListeners();
+		} else {
+			//console.log("Already at maximum slots.");
+		}
+	}
+
+	function removeSlot() {
+		if(slots > minSlots) {
+			$('#slot_'+slots).remove();
+			slots -= 1;
+			//console.log("Removed slot " +  (slots + 1) +". Down to " + slots + " slots.");
+
+			refreshListeners();
+		} else {
+			//console.log("Already at minimum slots.");
+		}
+	}
+
+	function selectSlot(clickedSlot) {
+		if($( clickedSlot ).attr('id') && $( clickedSlot ).attr('id') != "Preview") {
+			var clickedID = $( clickedSlot ).attr('id');
+			clickedID = clickedID.split("_");
+			clickedID = clickedID[1];
+			//console.log("Clicked slot " + clickedID);
+			$(".slot").removeClass('active');
+			$(clickedSlot).addClass('active');
+
+			editSlot = clickedID;
+
+			//console.log(slotData[editSlot]['size'] + slotData[editSlot]['color'] + slotData[editSlot]['character'] + slotData[editSlot]['costume']);
+
+			updatePreview(slotData[editSlot]['size'], slotData[editSlot]['color'], slotData[editSlot]['character'], slotData[editSlot]['costume']);
+
+			$("#box_color").val(slotData[editSlot]['color']);
+			$("#box_size").val(slotData[editSlot]['size']);
+			$("#sel_"+slotData[editSlot]['character']).prop('checked', true);
+
+			updateCostumes();
+
+			$("#Edit").fadeIn(250);
+		}
+	}
+
+	function updatePreview(size, color, character, costume) {
+
+		size = typeof size !== 'undefined' ? size : 'wide';
+		color = typeof color !== 'undefined' ? color : 'red';
+		character = typeof character !== 'undefined' ? character : 'omakase';
+		costume = typeof costume !== 'undefined' ? costume : '01';
+
+		oldCharacter = character;
+
+		preview['size'] = size;
+		preview['color'] = color;
+		preview['character'] = character;
+		preview['costume'] = costume;
+
+		$('#Preview').removeClass().addClass("slot").addClass(preview['size']).addClass(preview['color']);
+
+		$('#Preview').find('.char').removeClass().addClass('char').addClass(preview['character']).addClass("color"+preview['costume']);
+	}
+
+	function updateSlot(size, color, character, costume) {
+
+		size = typeof size !== 'undefined' ? size : slotData[editSlot]['size'];
+		color = typeof color !== 'undefined' ? color : slotData[editSlot]['color'];
+		character = typeof character !== 'undefined' ? character : slotData[editSlot]['character'];
+		costume = typeof costume !== 'undefined' ? costume : slotData[editSlot]['costume'];
+
+		slotData[editSlot]['size'] = size;
+		slotData[editSlot]['color'] = color;
+		slotData[editSlot]['character'] = character;
+		slotData[editSlot]['costume'] = costume;
+
+		// Update slot data
+		$('#slot_'+editSlot).removeClass().addClass("slot").addClass(slotData[editSlot]['size']).addClass(slotData[editSlot]['color']);
+
+		// Update char data
+		$('#slot_'+editSlot).find('.char').removeClass().addClass('char').addClass(slotData[editSlot]['character']).addClass("color"+slotData[editSlot]['costume']);
+	}
+
+	function updateCostumes() {
+
+		$('#CostumeList').html("");
+
+		var i = 1;
+		var total = 8;
+		if(preview['character'] == "littlemac") {
+			total = 16;
+		} else if(preview['character'] == "miifighter" || preview['character'] == "miigunner" || preview['character'] == "miiswords" || preview['character'] == "omakase") {
+			total = 1;
+		}
+
+		while(i <= total) {
+
+			costID = i;
+			costID = ("0" + String(costID)).slice(-2);
+
+			/*
+				<input type="radio" name="costSel" class="editCost" id="sel_01" value="01">
+				<label class="costume " + preview['character'] + " color"+costID+"" for="sel_koopa" value="Bowser"></label>
+
+			*/
+			$('#CostumeList').append('<input type="radio" name="costSel" class="editCost" id="sel_'+costID+'" value="'+costID+'">');
+			$('#CostumeList').append('<label class="costume ' + preview['character'] + ' color'+costID+'" for="sel_'+costID+'" value="'+costID+'"></label>');
+			i += 1;
+		}
+
+		refreshListeners();
+
+	}
+
+	function saveSlot(size, color, character, costume) {
+		size = typeof size !== 'undefined' ? slotData[editSlot]['size'] : preview['size'];
+		color = typeof color !== 'undefined' ? slotData[editSlot]['color'] : preview['color'];
+		character = typeof character !== 'undefined' ? slotData[editSlot]['character'] : preview['character'];
+		costume = typeof costume !== 'undefined' ? slotData[editSlot]['costume'] : preview['costume'];
+
+		updateSlot(size, color, character, costume);
+		$('#Edit').fadeOut(250);
+
+	}
+
+	function changeAllSizes() {
+		var preserveEditSlot = editSlot;
+		var i = 1;
+		while(i <= maxSlots) {
+			slotData[i]['size'] = preview['size'];
+			editSlot = i;
+			updateSlot();
+			i++;
+		}
+		editSlot = preserveEditSlot;
+	}
+
+	function changeAllColors() {
+		var preserveEditSlot = editSlot;
+		var i = 1;
+		while(i <= maxSlots) {
+			slotData[i]['color'] = preview['color'];
+			editSlot = i;
+			updateSlot();
+			i++;
+		}
+		editSlot = preserveEditSlot;
+	}
+
+	/* Preload */
+	function preload(arrayOfImages) {
+		$(arrayOfImages).each(function(){
+			$('<img/>')[0].src = this;
+		});
+	}
+
+	preload([
+		'chars/chr_11_bayonetta_01.png','chars/chr_11_captain_01.png','chars/chr_11_cloud_01.png','chars/chr_11_dedede_01.png','chars/chr_11_diddy_01.png','chars/chr_11_donkey_01.png','chars/chr_11_drmario_01.png','chars/chr_11_duckhunt_01.png','chars/chr_11_falco_01.png','chars/chr_11_fox_01.png','chars/chr_11_gamewatch_01.png','chars/chr_11_ganon_01.png','chars/chr_11_gekkouga_01.png','chars/chr_11_ike_01.png','chars/chr_11_kamui_01.png','chars/chr_11_kirby_01.png','chars/chr_11_koopa_01.png','chars/chr_11_koopajr_01.png','chars/chr_11_link_01.png','chars/chr_11_littlemac_01.png','chars/chr_11_lizardon_01.png','chars/chr_11_lucario_01.png','chars/chr_11_lucas_01.png','chars/chr_11_lucina_01.png']);
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

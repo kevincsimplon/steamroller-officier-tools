@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steamroller-tools</title>
+  <script src="script.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+
+
+<!-- Nav-->
+<div id="navbar">
+    <a href="#">Personnages</a>
+    <a href="#">Gold</a>
+    <a href="recrutement/recrut.html">Recrutement</a>
+    <a href="#">Legion</a>
+
+</div>
+
+
+
+
+
+
+
+<div class="container">
+
+  <div class="dropdown">
+    <button xmlns="http://www.w3.org/1999/xhtml" class="Button dropdown-toggle Button--fixedWidth"  type="button" data-toggle="dropdown" data-analytics="wow7-buy" data-analytics-placement="Top Button">
+                <div class="Button-left"></div>
+      <div class="Button-middle"></div>
+      <div class="Button-right"></div>
+      <div class="Button-light"></div>
+      <div class="Button-text">Legion</div>
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li class="dropdown-header">The Emerald Nightmare</li>
+      <li><a href="boss/Nythendra.html">Nythendra <span class="imgall img"> </span></a></li>
+      <li><a href="#">Il'gynoth, Heart of Corruption <span class="imgall img2"> </span></a></li>
+      <li><a href="#">Ursoc <span class="img3"> </span> </a></li>
+      <li><a href="#">Dragons of nightmare <span class="imgall img4"> </span></a></li>
+      <li><a href="#">Elerethe Renferal <span class="imgall img5"> </span></a></li>
+      <li><a href="#">Cenarius <span class="imgall img6"> </span></a></li>
+      <li><a href="#">Xavius <span class="imgall img7"> </span></a></li>
+
+      <li class="divider"></li>
+      <li class="dropdown-header">Suramar Palace </li>
+      <li><a href="#">Crystal Scorpion</a></li>
+    </ul>
+  </div>
+</div> <!-- /NAV-->
+
+
+
+<!-- Description -->
+<h1 class="description">
+Nos joueurs
+</h1>
+
+<!-- Table demo -->
+<div class="box-table">
+<table data-fn="contacts" data-url="table.js"></table>
+</div>
+<script>
+//    Demo json  loaded from dropbox
+//    Data = http://codepen.io/nakome/pen/DnEvr.js
+//[
+//   {
+//      "photo":"image url ",
+//      "name":"Jhon",
+//      "last":"Smith",
+//      "email":"jhony@site.com",
+//      "phone":"1-555-222-333",
+//      "web":"http://jhonSmith.com"
+//   },
+//   {
+//      "photo":"image url",
+//      "name":"Carla",
+//      "last":"Doe",
+//      "email":"carladoe@site.com",
+//      "phone":"1-333-111-555",
+//      "web":"http://carladoe.com"
+//   }
+// ]
+
+
+(function(){
+
+  'use-strict';
+
+  var elem,
+      // data-fn
+      dataFn = $('[data-fn="contacts"]'),
+      // data-url
+      thisUrl = dataFn.data('url');
+
+
+  if (typeof $.table_of_contacts == 'undefined')
+
+    $.table_of_contacts = {};
+
+  $.table_of_contacts.get = {
+
+    init: function() {
+      if(dataFn){
+        this.getJson();
+      }else{
+        dataFn.html('No data found.');
+      }
+    },
+
+    /* = Get data
+    ------------------------*/
+    getJson: function(url){
+
+      var self = this;
+
+      // loading data before
+      dataFn.html('<span class="loading_table">'+
+                  'Loading Please Wait ....'+
+                  '</span>');
+
+      // No ajax cache
+      $.ajaxSetup({ cache: false });
+
+      // Get json
+      $.getJSON(thisUrl,function(data){
+
+        // load template
+        var out_html = self.tpl();
+
+        $.each(data,function(i,obj){
+          // load inner template
+          out_html += self.tpl_inner(obj);
+
+        });
+        // close tag
+        out_html += '</tbody>';
+        // render templates
+        dataFn.html(out_html);
+        // error
+      }).error(function(j,t,e){
+        // render error.
+        dataFn.html('<span class="error_table">'+
+                    'Error = '+e+
+                    '</span>');
+
+      });
+    },
+
+    // head table template
+    tpl: function(){
+      var html = '<thead>'+
+          '<tr>'+
+          '<th>Avatar</th>'+
+          '<th>Main class</th>'+
+          '<th>reroll</th>'+
+          '<th class="goldfont">Gold</th>'+
+          '<th>Phone</th>'+
+          '<th>Web</th>'+
+          '</tr>'+
+          '</thead>'+
+          '<tbody >';
+      return html;
+    },
+    // inner template
+    tpl_inner: function(obj){
+
+      var  html= '<tr>'+
+          '<td class="user-photo">'+
+          '<img class="user-tumb" src="'+obj.photo+'"/>'+
+          '</td>'+
+          '<td>'+obj.name+'</td>'+
+          '<td >'+
+          '<img class="user-tumb" src="'+obj.reroll+'"/>'+
+          '<img class="user-tumb" src="'+obj.reroll2+'"/>' +'</td>' +
+          '<td>'+obj.email+
+          '<img class="user-tumb" src="'+obj.reroll3+'"/>' +'</td>'
+          +
+          '<td>'+obj.phone+'</td>'+
+          '<td>'+
+          '<a href="'+obj.web+'" title="'+
+          obj.name + ' ' + obj.last+'">'+
+          obj.web +
+          '</td>'+
+          '</tr>';
+      return html;
+    }
+
+  };
+
+  // on ready render data
+  $(document).ready(function() {
+    $.table_of_contacts.get.init();
+  });
+})().call(this);</script>
+
+
+</body>
+</html>
