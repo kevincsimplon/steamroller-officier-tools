@@ -15,7 +15,7 @@ body {
   transform: rotate(180deg);
 }
 #navbar:after {
-  content: url(../img/navigation-wow.png);
+  content: url(../img/navigation-wow.png) ;
   display: block;
   height: 85px;
   position: absolute;
@@ -27,10 +27,30 @@ body {
   height: 80px;
   background-color: #808080;
   margin: 0 auto;
-  left: 0;
   right: 0;
-
+  left: 0;
 }
+
+.Navigation-full .Navigation-icon--gameSite,
+.Navigation-full .Navigation-icon--gameSite:after {
+  background: url("../img/navigation-wow.png") no-repeat 100% 0;
+  height: 63px;
+  height: 3.15rem;
+  margin: -6px -5px 0 0;
+  margin: -0.3rem -0.25rem 0 0;
+  right: 0;
+  top: 0;
+  width: 63px;
+  width: 3.15rem;
+}
+
+.Navigation-full .Navigation-icon--gameSite:after {
+  background-position: 0 0;
+  margin: 0;
+}
+
+
+
 #navbar {
   padding: 20px 0 0;
   width: 100%;
